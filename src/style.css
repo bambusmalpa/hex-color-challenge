@@ -1,0 +1,92 @@
+body{
+  margin: 0;
+  padding: 0;
+  font-family:'Open Sans',Arial, Helvetica, sans-serif
+}
+.header{
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 20vh;
+  background-color: beige;
+  display: flex;
+}
+.scoreBarConteiner{
+  
+  width: 100vw;
+  height: 10vh;
+  background-color: azure;
+  
+
+}
+.scoreBarConteiner__content{
+  width: 60vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.scoreBar__element{
+  width: 60vw;
+}
+.scoreBar__button{
+  width: 20vw
+}
+.ingameStats{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.dificultyBar__element{
+
+  color:blue;
+}
+
+
+.dificultyBar__element--active{
+  border-bottom: 3px solid;
+}
+.dificultyBar{
+  width: 20vw;
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  justify-content: space-between;
+
+}
+
+.tailsList{
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 70vh;
+  height: 70vh;
+  align-items: space-between;
+  justify-content: space-between;
+
+}
+.tailsList__element{
+  list-style: none;
+  width: 30%;
+  height: 30%;
+  border-radius:100%
+}
+
+
+.scoreBar__heart{
+  color:#ff0000;
+  margin-left: 5px;
+  animation:beat 0.5s infinite ease;
+  font-size: 30px;
+}
+
+
+@keyframes beat {
+  0%{transform: scale(0.8)}
+  100%{transform: scale(1)}
+}
