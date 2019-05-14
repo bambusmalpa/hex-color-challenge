@@ -4,7 +4,7 @@ import DificultyBar from "./DificultyBar"
 import IngameStats from "./IngameStats"
 
 const ScoreBar = (props) => {
- 
+  
   
 
   return ( <div className="scoreBarConteiner">

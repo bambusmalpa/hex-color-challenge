@@ -1,14 +1,14 @@
 body{
   margin: 0;
   padding: 0;
-  font-family:'Open Sans',Arial, Helvetica, sans-serif
+  font-family:'Open Sans',Arial, Helvetica, sans-serif;
+  overflow: hidden;
 }
 .header{
   justify-content: center;
   align-items: center;
   width: 100vw;
-  height: 20vh;
-  background-color: beige;
+  height: 15vh;
   display: flex;
 }
 .scoreBarConteiner{
@@ -16,11 +16,13 @@ body{
   width: 100vw;
   height: 10vh;
   background-color: azure;
-  
+  display:flex;
+
 
 }
 .scoreBarConteiner__content{
   width: 60vw;
+  height: 10vh;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -30,19 +32,30 @@ body{
 }
 
 .scoreBar__element{
-  width: 60vw;
+  display: flex;
+  width: 90%;
+  height: 10vh;
 }
 .scoreBar__button{
-  width: 20vw
+  width: 10%;
 }
 .ingameStats{
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   align-items: center;
+  
+}
+.ingameStats__lifes{
+
+}
+.ingameStats__questions{
+  margin-left:2vw;
 }
 .dificultyBar__element{
-
-  color:blue;
+  display:block;
+  width: 30%;
+  height: 100%;
+  text-align: center;
 }
 
 
@@ -57,36 +70,69 @@ body{
   justify-content: space-between;
 
 }
+.startResetButton{
+  background-color: #ffffff;
+  padding: 2%;
+  border:solid 2px #000000;
+}
 
 .tailsList{
-  margin-left: auto;
-  margin-right: auto;
+  margin-left:50%;
+  transform: translateX(-50%);
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  width: 70vh;
-  height: 70vh;
+  width: 50vh;
+  height: 50vh;
   align-items: space-between;
   justify-content: space-between;
+  animation:tailListMove 0.5s ease;
 
 }
 .tailsList__element{
   list-style: none;
   width: 30%;
   height: 30%;
-  border-radius:100%
+  border-radius:100%;
+  animation:tailsAnim 0.5s ease;
+}
+
+@keyframes tailsAnim{
+  from{transform:scale(0);
+    }
+  to{transform:scale(1)}
 }
 
 
 .scoreBar__heart{
   color:#ff0000;
-  margin-left: 5px;
-  animation:beat 0.5s infinite ease;
-  font-size: 30px;
+  animation:beat 0.5s ease;
+  font-size: 3vw;
+  margin-right: 1vw;
+}
+
+.messageBar{
+  position: absolute;
+  left:50%;
+  top:50%;
+  transform: translate(-50%);
+  border:1px solid #000000;
+  background-color: #ffffff;
+  width: 20vh;
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
 }
 
 
 @keyframes beat {
   0%{transform: scale(0.8)}
   100%{transform: scale(1)}
+}
+
+@keyframes tailListMove{
+  0%{transform: translateX(-500%);}
+  100%{transform: translateX(-50%);}
 }

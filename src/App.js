@@ -2,7 +2,7 @@ import React from 'react';
 import Header from "./components/Header"
 import ScoreBar from "./components/ScoreBar"
 import Tails from "./components/Tails"
-
+import MessageBar from "./components/MessageBar"
 
 
 class App extends React.Component {
@@ -15,7 +15,8 @@ class App extends React.Component {
       currentQuestion:1,
       gameStarted:false,
       arrOfColors:[],
-      winColor:""
+      winColor:"",
+      message:"",
     }
   randomizeColors=(dif)=>{
     const arr=[]
@@ -54,10 +55,15 @@ class App extends React.Component {
       console.log("punkt dla ciebie")
       this.setState({
         currentQuestion:this.state.currentQuestion+1,
+        message:"punkt dla Ciebie"
       })
+     
+
+
       if(this.state.currentQuestion===this.state.questionLeft){
-        this.resetGame()
+        
         alert("Wygranko")
+        this.resetGame()
       }
       this.randomizeColors(this.state.dificulty)
     }
@@ -105,7 +111,7 @@ class App extends React.Component {
         startGame={this.startGame}
         resetGame={this.resetGame}
         setDificulty={this.setDificulty}/>
-      
+      {/* <MessageBar message={this.state.message}/> */}
       <Tails
         dificulty={this.state.dificulty}
         arrOfColors={this.state.arrOfColors}
